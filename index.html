@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Rx Qatar Zone esports tournament app prototype">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <title>Rx Qatar Zone</title>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark">RX</div>
+    <div class="brand-copy"><strong>Rx Qatar Zone</strong><small>ESPORTS TOURNAMENTS</small></div>
+    <button class="icon-btn" id="noticeBtn" aria-label="Notifications">♢<span class="dot"></span></button>
+  </header>
+
+  <main>
+    <section class="hero panel">
+      <div class="hero-copy">
+        <span class="eyebrow">PLAY • COMPETE • RISE</span>
+        <h1>Enter the<br><em>Battle Zone.</em></h1>
+        <p>Find your next match. Build your squad. Climb the leaderboard.</p>
+        <button class="primary-btn" data-go="tournaments">Explore tournaments <span>→</span></button>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="orbit"></div><div class="shield">RX</div><span class="spark s1">✦</span><span class="spark s2">✧</span></div>
+    </section>
+
+    <section class="stats-grid">
+      <div class="stat-card"><span>Open matches</span><strong id="openCount">06</strong><small>Join a lobby</small></div>
+      <div class="stat-card"><span>Your points</span><strong id="pointsCount">0</strong><small>Season ranking</small></div>
+      <div class="stat-card"><span>Demo wallet</span><strong id="walletStat">৳0</strong><small>Sample balance</small></div>
+    </section>
+
+    <section class="section-head" id="tournaments">
+      <div><span class="eyebrow">FIND YOUR MATCH</span><h2>Tournaments</h2></div>
+      <button class="text-btn" id="viewAll">View all ↗</button>
+    </section>
+    <div class="filter-row" role="group" aria-label="Filter tournaments">
+      <button class="filter active" data-filter="All">All</button>
+      <button class="filter" data-filter="BR">BR</button>
+      <button class="filter" data-filter="CS">CS</button>
+      <button class="filter" data-filter="Free">Free entry</button>
+    </div>
+    <div class="tournament-list" id="tournamentList"></div>
+
+    <section class="section-head">
+      <div><span class="eyebrow">HOW TO COMPETE</span><h2>Quick guide</h2></div>
+    </section>
+    <div class="guide-grid">
+      <div class="guide-card"><span>01</span><strong>Create profile</strong><p>Add your player name and game UID.</p></div>
+      <div class="guide-card"><span>02</span><strong>Join a match</strong><p>Check mode, slots and match rules.</p></div>
+      <div class="guide-card"><span>03</span><strong>Play fair</strong><p>Submit results when the match ends.</p></div>
+    </div>
+  </main>
+
+  <nav class="bottom-nav">
+    <button class="nav-item selected" data-page="home"><span>⌂</span>Home</button>
+    <button class="nav-item" data-page="matches"><span>⚔</span>Matches</button>
+    <button class="nav-item" data-page="wallet"><span>▣</span>Wallet</button>
+    <button class="nav-item" data-page="profile"><span>♙</span>Profile</button>
+  </nav>
+
+  <div class="modal-backdrop hidden" id="modalBackdrop">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+      <div id="modalContent"></div>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
